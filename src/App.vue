@@ -3,6 +3,7 @@
     <AppHeader />
     <AppServices />
     <AppBusiness />
+    <AppPortfolio />
   </div>
 </template>
 
@@ -10,6 +11,7 @@
 import AppHeader from "./components/AppHeader.vue";
 import AppServices from "./components/AppServices.vue";
 import AppBusiness from "./components/AppBusiness.vue";
+import AppPortfolio from "./components/AppPortfolio.vue";
 
 export default {
   name: "App",
@@ -17,6 +19,7 @@ export default {
     AppHeader,
     AppServices,
     AppBusiness,
+    AppPortfolio,
   },
 };
 </script>
@@ -217,5 +220,22 @@ header {
   }
 }
 
+//Section PORTFOLIO
 
+.portfolio-section{
+
+  &-content{
+    margin-bottom: 30px;
+    > span{
+      color: $span;
+    }
+  }
+  &-content-img{
+    @include flex-space-between();
+
+    img{
+      width: 350px;
+    }
+  }
+}
 </style>
