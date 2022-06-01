@@ -14,7 +14,7 @@
       <div class="jumbotron">
         <h1>
           Businnes Planning
-          <span>Digital Technology</span>
+          <span class="weight-normal">Digital Technology</span>
           Modern Solution!
         </h1>
         <p>
@@ -29,7 +29,9 @@
 </template>
 
 <script>
-export default {};
+export default {
+  name: 'AppHeader'
+};
 </script>
 
 <style lang="scss" scooped>
