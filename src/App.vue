@@ -2,18 +2,21 @@
   <div id="app">
     <AppHeader />
     <AppServices />
+    <AppBusiness />
   </div>
 </template>
 
 <script>
 import AppHeader from "./components/AppHeader.vue";
 import AppServices from "./components/AppServices.vue";
+import AppBusiness from "./components/AppBusiness.vue";
 
 export default {
   name: "App",
   components: {
     AppHeader,
     AppServices,
+    AppBusiness,
   },
 };
 </script>
@@ -181,5 +184,38 @@ header {
     margin-top: 90px;
   }
 }
+//Section BUSINESS
+
+.grow-your-business-section {
+  background-color: #0a1750;
+  height: 700px;
+  color: #fff;
+  margin-top: 70px;
+  background-image: url("./assets/images/men-data.png");
+  background-repeat: no-repeat;
+  background-size: 27%;
+  background-position: 20% 60%;
+  margin-bottom: 60px;
+  display: flex;
+  align-items: center;
+
+  .grow-your-business {
+    margin-left: 650px;
+  }
+
+  h2 {
+    width: 410px;
+    margin-top: 30px;
+    font-size: 45px;
+  }
+
+  p {
+    width: 400px;
+    margin-top: 30px;
+    margin-bottom: 40px;
+    color: $blue-p;
+  }
+}
+
 
 </style>
