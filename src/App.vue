@@ -34,13 +34,18 @@ export default {
 //VARIABILI
 
 //Colori
-$blue-background: #0a1750;
-$services-p: #808080;
-$span: #f9696b;
+
+$primary-background-color: #0a1750;
+$secondary-background-color: #f1f1f1;
+$primary-color: #888;
+$secondary-color: #f9636b;
 //utilizzo gradient per la sfumatura dei bottoni
-$gradient-pink: linear-gradient(to right, #b7256e 0%, #f8626b 100%);
-$gradient-blue: linear-gradient(to right, #03a6d2 0%, #1f3e83 100%);
-$blue-p: #047caa;
+$primary-gradient: linear-gradient(to right, #b7256e 0%, #f8626b 100%);
+$secondary-gradient: linear-gradient(to right, #03a6d2 0%, #1f3e83 100%);
+$gradient-hover: linear-gradient(to right, #cc396d 0%, #f9646c 100%);
+$tertiary-gradient: linear-gradient(to bottom right, #020230 0%, #173270 100%);
+$tertiary-color: #f4f4f4;
+$footer-text-color: #aaa;
 
 //Fonts
 $font-body: "Open Sans", sans-serif;
@@ -110,7 +115,7 @@ ul {
 }
 
 .pink-button {
-  background: $gradient-pink;
+  background: $primary-gradient;
   color: #fff;
   @include buttons-style();
   width: 170px;
@@ -121,7 +126,7 @@ ul {
 
 .white-button {
   background: #fff;
-  color: $span;
+  color: $secondary-color;
   @include buttons-style();
   width: 170px;
   @include flex-space-between();
@@ -129,15 +134,24 @@ ul {
   padding: 0 23px;
 }
 
+.white-button-2{
+  width: 125px;
+  height: 40px;
+  border-radius: 23px;
+  border: none;
+  background-color: #fff;
+  cursor: pointer;
+}
+
 .pink-2-button {
-  background: $gradient-pink;
+  background: $primary-gradient;
   color: #fff;
   @include buttons-style();
   width: 150px;
 }
 
 .blue-button {
-  background: $gradient-blue;
+  background: $secondary-gradient;
   @include buttons-style();
   margin-left: 16px;
   width: 150px;
@@ -146,7 +160,7 @@ ul {
 
 //Header
 header {
-  background-color: $blue-background;
+  background-color: $primary-background-color;
   height: 680px;
   background-image: url("./assets/images/header.png");
   background-repeat: no-repeat;
@@ -158,6 +172,9 @@ header {
     height: 90px;
     display: flex;
     align-items: center;
+    .logo {
+      height: 51px;
+    }
   }
 
   .jumbotron {
@@ -177,7 +194,7 @@ header {
       margin-top: 30px;
       margin-bottom: 55px;
       width: 400px;
-      color: $blue-p;
+      color: $tertiary-color;
     }
   }
 }
@@ -188,7 +205,8 @@ header {
   text-align: center;
 
   > span {
-    color: $span;
+    color: $secondary-color;
+    font-size: 13px;
   }
 
   h2 {
@@ -196,7 +214,8 @@ header {
   }
 
   p {
-    color: $services-p;
+    color: $primary-color;
+    font-size: 13px;
   }
 
   &-list {
@@ -215,7 +234,7 @@ header {
     }
 
     p {
-      color: $services-p;
+      color: $primary-color;
       width: 200px;
     }
   }
@@ -226,7 +245,7 @@ header {
 //Section BUSINESS
 
 .grow-your-business-section {
-  background-color: #0a1750;
+  background-color: $primary-background-color;
   height: 700px;
   color: #fff;
   margin-top: 70px;
@@ -252,22 +271,22 @@ header {
     width: 400px;
     margin-top: 30px;
     margin-bottom: 40px;
-    color: $blue-p;
+    color: $tertiary-color;
   }
 }
 
 //Section PORTFOLIO
 
 .portfolio-section {
-  background-color: #f1f1f1;
+  background-color: $secondary-background-color;
   &-content {
     @include flex-space-between();
     align-items: flex-end;
-    padding: 20px 0 55px 0;
+    padding: 85px 0 60px 0;
 
     &-left {
       > span {
-        color: $span;
+        color: $secondary-color;
         font-size: 13px;
       }
 
@@ -277,7 +296,7 @@ header {
     }
     &-right {
       i {
-        color: $span;
+        color: $secondary-color;
         font-size: 32px;
         padding-bottom: 10px;
         margin-left: 10px;
@@ -307,7 +326,7 @@ header {
       padding: 18px 40px;
 
       span {
-        color: $services-p;
+        color: $primary-color;
         font-size: 10px;
       }
 
@@ -318,7 +337,7 @@ header {
   }
 
   &-container:hover {
-    background: $gradient-pink;
+    background: $gradient-hover;
   }
 }
 .icons-container {
@@ -327,16 +346,15 @@ header {
   padding: 43px 0 40px 0;
 
   .fas:first-child {
-    color: $span;
+    color: $secondary-color;
     font-size: 6px;
   }
   .fas {
-    color: $services-p;
+    color: $primary-color;
     font-size: 6px;
     margin-left: 5px;
   }
 }
-
 
 //Section PRICING
 
@@ -345,12 +363,12 @@ header {
   width: 100%;
   height: 500px;
   text-align: center;
-  background-color: $blue-background;
+  background-color: $primary-background-color;
   padding-top: 50px;
   position: relative;
 
   > span {
-    color: $span;
+    color: $secondary-color;
     font-size: 12px;
   }
 
@@ -370,14 +388,26 @@ header {
   .container {
     @include flex-space-between();
     position: absolute;
-    left: 90px;
+    left: 158px;
   }
 
   &-box-white {
     @include our-pricing-box();
-    background-color: white;
+    background-color: #fff;
+    overflow: hidden;
+
+    .transparent-number {
+      font-size: 260px;
+      position: absolute;
+      right: -13px;
+      top: -87px;
+      color: black;
+      opacity: 0.1;
+    }
 
     &-top {
+      position: relative;
+      z-index: 1;
       h3 {
         font-size: 28px;
       }
@@ -389,11 +419,14 @@ header {
     }
 
     &-middle {
-      margin-top: 31px;
+      margin-top: 33px;
       padding-bottom: 50px;
+      position: relative;
+      z-index: 1;
 
       .dollar {
         margin-right: 90px;
+        font-size: 15px;
       }
 
       h2 {
@@ -401,14 +434,6 @@ header {
       }
       span {
         font-size: 12px;
-      }
-      .transparent-number {
-        font-size: 260px;
-        position: absolute;
-        right: -15px;
-        top: -105px;
-        color: black;
-        opacity: 0.1;
       }
     }
 
@@ -437,8 +462,20 @@ header {
     @include our-pricing-box();
     background: linear-gradient(to bottom, #bf2d6d 0%, #ea566d 100%);
     color: #fff;
+    overflow: hidden;
+
+    .transparent-number {
+      font-size: 260px;
+      position: absolute;
+      right: -15px;
+      top: -105px;
+      color: black;
+      opacity: 0.1;
+    }
 
     &-top {
+      position: relative;
+      z-index: 1;
       h3 {
         font-size: 28px;
       }
@@ -462,14 +499,6 @@ header {
       }
       span {
         font-size: 12px;
-      }
-      .transparent-number {
-        font-size: 260px;
-        position: absolute;
-        right: -15px;
-        top: -105px;
-        color: black;
-        opacity: 0.1;
       }
     }
 
@@ -496,80 +525,139 @@ header {
     }
   }
 }
-//Section Blog
+//Section BLOG
 .weila-section {
-  background-color: #f1f1f1;
+  background-color: $secondary-background-color;
   height: 700px;
   padding-top: 400px;
   text-align: center;
 }
- > span{
-    color: $span;
-  }
-  h2{
-    margin: 5px 0;
-    font-size: 38px;
-  }
+> span {
+  color: $secondary-color;
+  font-size: 13px;
+}
+h2 {
+  margin: 5px 0;
+  font-size: 38px;
+}
 
-  > p{
-    color: $services-p;
-    font-size: 13px;
-    width: 37%;
-    margin: 0 auto;
-    margin-bottom: 75px;
-  }
+> p {
+  color: $primary-color;
+  font-size: 13px;
+  width: 37%;
+  margin: 0 auto;
+  margin-bottom: 75px;
+}
 
-  .container-section{
+.container-section {
+  @include flex-space-between();
+  text-align: left;
+  padding: 0 100px;
+  .left {
     @include flex-space-between();
-    text-align: left;
-    padding: 0 80px;
-    .top{
+    padding: 0 40px 30px 40px;
+
+    background-image: url("./assets/images/headway-537308-unsplash-1380x703.jpg");
+    position: relative;
+    background-size: cover;
+    width: 48%;
+    height: 330px;
+    color: #fff;
+    border-radius: 23px;
+
+    .wa {
+      display: flex;
+      align-items: flex-end;
+    }
+
+    .wi {
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+    }
+
+    span {
+      position: relative;
+      font-size: 11px;
+    }
+    .trattino {
+      margin: 0 7px;
+    }
+    h3 {
+      position: relative;
+      margin: 10px 0;
+      font-size: 16px;
+    }
+    p {
+      position: relative;
+      font-size: 11px;
+      width: 90%;
+    }
+  }
+  .middle {
+    width: 23%;
+    height: 330px;
+    background: linear-gradient(to bottom right, #020230 0%, #173270 100%);
+    color: #fff;
+    padding: 30px 60px 30px 42px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    border-radius: 23px;
+
+    span {
+      font-size: 11px;
+    }
+    .trattino {
+      margin: 0 7px;
+    }
+    h3 {
+      margin: 25px 0;
+      font-size: 16px;
+    }
+    p {
+      font-size: 11px;
+    }
+    button {
+      margin-top: 40px;
+    }
+  }
+  .right {
+    width: 23%;
+    height: 330px;
+    background: $tertiary-gradient;
+      color: #fff;
+      padding: 30px 60px 30px 42px;
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
-      padding: 0 0 30px 40px;
-      background-image: url("./assets/images/headway-537308-unsplash-1380x703.jpg");
-      position: relative;
-      background-size: cover;
-      width: 49%;
-      height: 330px;
-      color: #fff;
+      border-radius: 23px;
 
       span{
-        position: relative;
-        font-size: 12px;
+        font-size: 11px;
       }
       .trattino{
         margin: 0 7px;
       }
       h3{
-        position: relative;
-        margin: 10px 0;
-        font-size: 16.5px;
+        margin: 25px 0;
+        font-size: 16px;
       }
       p{
-        position: relative;
-        font-size: 12px;
-        width: 57%;
+        font-size: 11px;
       }
-    }
-    .middle{
-      width: 23%;
-      height: 330px;
-      background: linear-gradient(to bottom right, #020230 0%,#173270 100%);
-    }
-    .bottom{
-      width: 23%;
-      height: 330px;
-      background: linear-gradient(to bottom right, #020230 0%,#173270 100%);;
-    }
+      button{
+        margin-top: 40px;
+      }
   }
-  .opacity{
+}
+
+.opacity {
   background-color: rgba(0, 0, 0, 0.5);
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-} 
+}
 </style>
