@@ -44,10 +44,8 @@
         <i class="fas fa-circle"></i>
         <i class="fas fa-circle"></i>
       </div>
-
     </div>
   </div>
-  
 </template>
 
 <script>

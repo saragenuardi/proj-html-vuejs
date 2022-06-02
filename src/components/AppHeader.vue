@@ -7,14 +7,14 @@
         </div>
         <div class="navbar-right">
           <ul>
-         <li
+            <li
               v-for="(item, index) in navbarLinks"
               :key="index"
               :class="{ selected: item.active }"
             >
               {{ item.testo }}
             </li>
-            <li> <button class="blue-button"> Sign In</button></li>
+            <li><button class="blue-button">Sign In</button></li>
           </ul>
         </div>
       </div>
@@ -28,7 +28,7 @@
           When, while the lovely valley teems witch vapour around meand the
           meridian sun strikes the upper surface.
         </p>
-        <button class="pink-button">Try It Now</button>
+        <button class="pink-2-button">Try It Now</button>
         <button class="blue-button">Explore More</button>
       </div>
     </div>
@@ -37,8 +37,8 @@
 
 <script>
 export default {
-  name: 'AppHeader',
- data() {
+  name: "AppHeader",
+  data() {
     return {
       navbarLinks: [
         {
@@ -74,7 +74,6 @@ export default {
       ],
     };
   },
-
 };
 </script>
 

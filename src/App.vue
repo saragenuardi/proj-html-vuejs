@@ -60,6 +60,8 @@ $color-6: #b6246e;
 //Fonts
 $font-body: "Open Sans", sans-serif;
 $font-title: "Heebo", sans-serif;
+$font-our-pricing: 'Montserrat', sans-serif;
+
 
 //Bottons and mixin
 @mixin buttons-style {
@@ -197,65 +199,68 @@ ul {
   background: $primary-gradient;
 }
 //Header
-header {
+header{
   background-color: $primary-background-color;
   height: 760px;
-  background-image: url("./assets/images/header.png");
+  background-image: url('./assets/images/header.png');
   background-repeat: no-repeat;
   background-size: 39%;
   background-position: 80% 45%;
   margin-bottom: 60px;
 
-  .navbar {
+  .navbar{
     height: 90px;
     @include flex-space-between();
     align-items: center;
-    &-left {
-      .logo {
+    color: white;
+    
+    &-left{
+
+      .logo{
         height: 51px;
       }
     }
-    &-right {
-      li {
+    &-right{
+
+      li{
         padding-left: 25px;
         display: inline-block;
         font-size: 15px;
-
-        a {
+        
+        a{
           color: #fff;
         }
-        button {
+        button{
           width: 90px;
           height: 35px;
           margin-left: 10px;
         }
-
-        a {
+        
+        a{
           color: #fff;
-        }
+        } 
       }
     }
+  }
 
-    .jumbotron {
-      h1 {
-        width: 460px;
-        margin-top: 140px;
-        color: #fff;
-        font-size: 50px;
-      }
+  .jumbotron{
 
-      span {
-        font-weight: normal;
-        margin: 5px 0;
-      }
+    h1{
+      width: 460px;
+      margin-top: 140px;
+      color: #fff;
+      font-size: 50px;
+    }
+    span{
+      margin: 5px 0;
+    }
 
-      p {
-        margin-top: 30px;
-        margin-bottom: 55px;
-        width: 340px;
-        color: $tertiary-color;
-        font-size: 12px;
-      }
+    p{
+      margin-top: 30px;
+      margin-bottom: 55px;
+      width: 340px;
+      color: $tertiary-color;
+      font-size: 12px;
     }
   }
 }
@@ -344,6 +349,7 @@ header {
 
 .portfolio-section {
   background-color: $secondary-background-color;
+
   &-content {
     @include flex-space-between();
     align-items: flex-end;
@@ -368,61 +374,59 @@ header {
       }
     }
   }
-
   &-content-img {
     @include flex-space-between();
-  }
 
-  &-container {
-    width: 375px;
-    height: 300px;
-    background-color: #fff;
-    border-radius: 20px;
-
-    img {
+    &-container {
       width: 375px;
-      height: 240px;
+      height: 300px;
+      background-color: #fff;
       border-radius: 20px;
-    }
 
-    &-text {
-      @include flex-space-between();
-      height: calc(400px - 328px);
-      padding: 18px 40px;
-
-      span {
-        color: $color-4;
-        font-size: 10px;
+      img {
+        width: 375px;
+        height: 240px;
+        border-radius: 20px;
       }
 
-      h3 {
-        font-size: 14px;
+      &-text {
+        @include flex-space-between();
+        height: calc(300px - 240px);
+        padding: 16px 30px;
+
+        span {
+          color: $color-4;
+          font-size: 10px;
+        }
+
+        h3 {
+          font-size: 14px;
+        }
       }
     }
-  }
 
-  &-container:hover {
-    background: $gradient-hover;
+    &-container:hover {
+      background: $gradient-hover;
+    }
   }
-}
-.icons-container {
-  display: flex;
-  justify-content: center;
-  padding: 43px 0 40px 0;
+  .icons-container {
+    display: flex;
+    justify-content: center;
+    padding: 43px 0 40px 0;
 
-  .fas:first-child {
-    color: $secondary-color;
-    font-size: 6px;
-  }
-  .fas {
-    color: $primary-color;
-    font-size: 6px;
-    margin-left: 5px;
+    .fas:first-child {
+      color: $secondary-color;
+      font-size: 6px;
+    }
+    .fas {
+      color: $primary-color;
+      font-size: 6px;
+      margin-left: 5px;
+    }
   }
 }
 
 //Section PRICING
-
 
 .our-pricing-section {
   width: 100%;
@@ -452,7 +456,9 @@ header {
 
   .container {
     @include flex-space-between();
+    position: absolute;
     left: 158px;
+    margin-left: 150px;
   }
 
   &-box-white {
@@ -465,13 +471,14 @@ header {
       position: absolute;
       right: -13px;
       top: -87px;
-      color: black;
+      color: #000;
       opacity: 0.1;
     }
 
     &-top {
       position: relative;
       z-index: 1;
+
       h3 {
         font-size: 28px;
       }
@@ -484,7 +491,7 @@ header {
 
     &-middle {
       margin-top: 33px;
-      padding-bottom: 50px;
+      padding-bottom: 40px;
       position: relative;
       z-index: 1;
 
@@ -494,7 +501,8 @@ header {
       }
 
       h2 {
-        font-size: 60px;
+        font-size: 80px;
+        font-family: $font-our-pricing;
       }
       span {
         font-size: 12px;
@@ -509,7 +517,7 @@ header {
       span {
         font-weight: bold;
       }
-      .w {
+      .button-container {
         display: flex;
         justify-content: center;
         button {
@@ -531,15 +539,16 @@ header {
     .transparent-number {
       font-size: 260px;
       position: absolute;
-      right: -15px;
-      top: -105px;
-      color: black;
+      right: -13px;
+      top: -87px;
+      color: #fff;
       opacity: 0.1;
     }
 
     &-top {
       position: relative;
       z-index: 1;
+
       h3 {
         font-size: 28px;
       }
@@ -552,14 +561,17 @@ header {
 
     &-middle {
       margin-top: 31px;
-      padding-bottom: 50px;
+      padding-bottom: 40px;
+      position: relative;
+      z-index: 1;
 
       .dollar {
         margin-right: 90px;
       }
 
       h2 {
-        font-size: 60px;
+        font-size: 80px;
+        font-family: $font-our-pricing;
       }
       span {
         font-size: 12px;
@@ -616,7 +628,7 @@ h2 {
 .container-section {
   @include flex-space-between();
   text-align: left;
-  padding: 0 100px;
+  padding: 50px 100px;
   .left {
     @include flex-space-between();
     padding: 0 40px 30px 40px;
@@ -759,7 +771,7 @@ h2 {
       img {
         height: 60px;
         border-radius: 100%;
-        border: 3px solid $color-6 ;
+        border: 3px solid $color-6;
       }
 
       .icons {
@@ -797,6 +809,7 @@ h2 {
     display: flex;
     justify-content: space-around;
     margin-top: 140px;
+    margin-bottom: 50px;
 
     img {
       height: 52px;
