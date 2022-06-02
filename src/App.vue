@@ -8,6 +8,7 @@
     <AppBlog />
     <AppTestimonial />
     <AppSubcribeBox />
+    <AppFooter />
   </div>
 </template>
 
@@ -20,6 +21,7 @@ import AppPricing from "./components/AppPricing.vue";
 import AppBlog from "./components/AppBlog.vue";
 import AppTestimonial from "./components/AppTestimonial.vue";
 import AppSubcribeBox from "./components/AppSubcribeBox.vue";
+import AppFooter from "./components/AppFooter.vue";
 export default {
   name: "App",
   components: {
@@ -31,6 +33,7 @@ export default {
     AppBlog,
     AppTestimonial,
     AppSubcribeBox,
+    AppFooter,
   },
 };
 </script>
@@ -50,7 +53,9 @@ $secondary-gradient: linear-gradient(to right, #03a6d2 0%, #1f3e83 100%);
 $gradient-hover: linear-gradient(to right, #cc396d 0%, #f9646c 100%);
 $tertiary-gradient: linear-gradient(to bottom right, #020230 0%, #173270 100%);
 $tertiary-color: #f4f4f4;
-$footer-text-color: #aaa;
+$color-4: #aaa;
+$color-5: #69717b;
+$color-6: #b6246e;
 
 //Fonts
 $font-body: "Open Sans", sans-serif;
@@ -95,6 +100,10 @@ body {
   margin: 0 auto;
 }
 
+a {
+  text-decoration: none;
+}
+
 h1,
 h2,
 h3 {
@@ -127,6 +136,11 @@ ul {
   @include flex-space-between();
   align-items: center;
   padding: 0 23px;
+  cursor: pointer;
+}
+
+.pink-button:hover {
+  background: $secondary-gradient;
 }
 
 .white-button {
@@ -139,7 +153,7 @@ ul {
   padding: 0 23px;
 }
 
-.white-button-2{
+.white-button-2 {
   width: 125px;
   height: 40px;
   border-radius: 23px;
@@ -148,11 +162,26 @@ ul {
   cursor: pointer;
 }
 
+.opacity {
+  background-color: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 23px;
+}
+
 .pink-2-button {
   background: $primary-gradient;
   color: #fff;
   @include buttons-style();
   width: 150px;
+  cursor: pointer;
+}
+
+.pink-2-button:hover {
+  background: $secondary-gradient;
 }
 
 .blue-button {
@@ -161,45 +190,72 @@ ul {
   margin-left: 16px;
   width: 150px;
   color: #fff;
+  cursor: pointer;
 }
 
+.blue-button:hover {
+  background: $primary-gradient;
+}
 //Header
 header {
   background-color: $primary-background-color;
-  height: 680px;
+  height: 760px;
   background-image: url("./assets/images/header.png");
   background-repeat: no-repeat;
-  background-size: 40%;
-  background-position: 80% 60%;
+  background-size: 39%;
+  background-position: 80% 45%;
   margin-bottom: 60px;
 
   .navbar {
     height: 90px;
-    display: flex;
+    @include flex-space-between();
     align-items: center;
-    .logo {
-      height: 51px;
+    &-left {
+      .logo {
+        height: 51px;
+      }
     }
-  }
+    &-right {
+      li {
+        padding-left: 25px;
+        display: inline-block;
+        font-size: 15px;
 
-  .jumbotron {
-    h1 {
-      width: 380px;
-      margin-top: 100px;
-      color: #fff;
-      font-size: 45px;
+        a {
+          color: #fff;
+        }
+        button {
+          width: 90px;
+          height: 35px;
+          margin-left: 10px;
+        }
+
+        a {
+          color: #fff;
+        }
+      }
     }
 
-    span {
-      font-weight: normal;
-      margin: 5px 0;
-    }
+    .jumbotron {
+      h1 {
+        width: 460px;
+        margin-top: 140px;
+        color: #fff;
+        font-size: 50px;
+      }
 
-    p {
-      margin-top: 30px;
-      margin-bottom: 55px;
-      width: 400px;
-      color: $tertiary-color;
+      span {
+        font-weight: normal;
+        margin: 5px 0;
+      }
+
+      p {
+        margin-top: 30px;
+        margin-bottom: 55px;
+        width: 340px;
+        color: $tertiary-color;
+        font-size: 12px;
+      }
     }
   }
 }
@@ -264,19 +320,23 @@ header {
 
   .grow-your-business {
     margin-left: 650px;
+    > span {
+      font-size: 13px;
+    }
   }
 
   h2 {
-    width: 410px;
-    margin-top: 30px;
-    font-size: 45px;
+    width: 450px;
+    margin-top: 20px;
+    font-size: 50px;
   }
 
   p {
-    width: 400px;
+    width: 420px;
     margin-top: 30px;
     margin-bottom: 40px;
     color: $tertiary-color;
+    font-size: 13px;
   }
 }
 
@@ -331,7 +391,7 @@ header {
       padding: 18px 40px;
 
       span {
-        color: $primary-color;
+        color: $color-4;
         font-size: 10px;
       }
 
@@ -363,7 +423,7 @@ header {
 
 //Section PRICING
 
-/* Prova */
+
 .our-pricing-section {
   width: 100%;
   height: 500px;
@@ -392,7 +452,6 @@ header {
 
   .container {
     @include flex-space-between();
-    position: absolute;
     left: 158px;
   }
 
@@ -516,7 +575,7 @@ header {
         font-weight: bold;
       }
 
-      .w {
+      .button-container {
         display: flex;
         justify-content: center;
         button {
@@ -531,7 +590,7 @@ header {
   }
 }
 //Section BLOG
-.weila-section {
+.blog-section {
   background-color: $secondary-background-color;
   height: 700px;
   padding-top: 400px;
@@ -570,12 +629,12 @@ h2 {
     color: #fff;
     border-radius: 23px;
 
-    .wa {
+    .inner-left {
       display: flex;
       align-items: flex-end;
     }
 
-    .wi {
+    .inner-right {
       position: relative;
       display: flex;
       align-items: flex-end;
@@ -585,7 +644,7 @@ h2 {
       position: relative;
       font-size: 11px;
     }
-    .trattino {
+    .dash {
       margin: 0 7px;
     }
     h3 {
@@ -613,7 +672,7 @@ h2 {
     span {
       font-size: 11px;
     }
-    .trattino {
+    .dash {
       margin: 0 7px;
     }
     h3 {
@@ -631,48 +690,48 @@ h2 {
     width: 23%;
     height: 330px;
     background: $tertiary-gradient;
-      color: #fff;
-      padding: 30px 60px 30px 42px;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      border-radius: 23px;
+    color: #fff;
+    padding: 30px 60px 30px 42px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    border-radius: 23px;
 
-      span{
-        font-size: 11px;
-      }
-      .trattino{
-        margin: 0 7px;
-      }
-      h3{
-        margin: 25px 0;
-        font-size: 16px;
-      }
-      p{
-        font-size: 11px;
-      }
-      button{
-        margin-top: 40px;
-      }
+    span {
+      font-size: 11px;
+    }
+    .dash {
+      margin: 0 7px;
+    }
+    h3 {
+      margin: 25px 0;
+      font-size: 16px;
+    }
+    p {
+      font-size: 11px;
+    }
+    button {
+      margin-top: 40px;
+    }
   }
 }
 
 //Section TESTIMONIAL
-.testimonial-section{
+.testimonial-section {
   text-align: center;
   padding-top: 310px;
   position: relative;
 
-  > span{
+  > span {
     color: $secondary-color;
     font-size: 13px;
   }
-  h2{
+  h2 {
     margin: 5px 0 20px 0;
     font-size: 38px;
   }
 
-  > p{
+  > p {
     color: $primary-color;
     font-size: 13px;
     width: 37%;
@@ -680,16 +739,16 @@ h2 {
     margin-bottom: 75px;
   }
 
-  .quotes-container{
+  .quotes-container {
     text-align: left;
     @include flex-space-between();
 
-    &-box{
+    &-box {
       width: 30%;
       position: relative;
       text-align: center;
 
-      .quotation-mark{
+      .quotation-mark {
         position: absolute;
         font-size: 170px;
         top: 30px;
@@ -697,66 +756,64 @@ h2 {
         opacity: 0.1;
       }
 
-      img{
+      img {
         height: 60px;
         border-radius: 100%;
-        border: 3px solid fuchsia;
+        border: 3px solid $color-6 ;
       }
 
-      .icons{
+      .icons {
         padding: 26px 0;
         position: relative;
         z-index: 2;
         font-size: 12px;
 
-        .fas{
-          color: fuchsia;
+        .fas {
+          color: $color-6;
         }
-        .far{
-          color: fuchsia;
+        .far {
+          color: $color-6;
         }
       }
 
-      p{
+      p {
         font-size: 13px;
         padding-bottom: 20px;
       }
 
-      .credits{
-
-        span{
+      .credits {
+        span {
           font-size: 13px;
           font-weight: bold;
         }
 
-        p{
+        p {
           margin-top: 7px;
         }
       }
-
     }
   }
-  .partners-img{
+  .partners-img {
     display: flex;
     justify-content: space-around;
     margin-top: 140px;
 
-    img{
+    img {
       height: 52px;
     }
-    img:nth-child(2){
+    img:nth-child(2) {
       height: 30px;
       margin-top: 12px;
     }
   }
 
-.opacity {
-  background-color: rgba(0, 0, 0, 0.5);
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
+  .opacity {
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
 }
 </style>

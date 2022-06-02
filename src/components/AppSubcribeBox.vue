@@ -33,7 +33,7 @@ export default {
   align-items: center;
   background: linear-gradient(to right, #b7256e 0%, #f8626b 100%);
   border-radius: 26px;
-  // bottom
+  //bottom
 
   &-left {
     h2 {

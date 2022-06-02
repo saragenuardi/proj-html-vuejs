@@ -1,8 +1,8 @@
 <template>
-  <div class="weila-section">
+  <div class="blog-section">
     <span>Blog</span>
     <h2>Latest <span class="weight-normal">Post</span></h2>
-    <p class="services-description">
+    <p>
       When, while the lovely valley teems with vapour around meand the meridian
       sun strikes the upper surface.
     </p>
@@ -10,10 +10,10 @@
     <div class="container-section">
       <div class="left">
         <div class="opacity"></div>
-        <div class="wa">
+        <div class="inner-left">
           <div>
             <div>
-              <span>April 21, 2019</span> <span class="trattino"> - </span>
+              <span>April 21, 2019</span> <span class="dash"> - </span>
               <span>by Paul</span>
             </div>
 
@@ -25,7 +25,7 @@
           </div>
         </div>
 
-        <div class="wi">
+        <div class="inner-right">
           <div>
             <button class="white-button-2">Read More</button>
           </div>
@@ -34,7 +34,7 @@
       <div class="middle">
         <div>
           <div>
-            <span>April 21, 2019</span> <span class="trattino"> - </span>
+            <span>April 21, 2019</span> <span class="dash"> - </span>
             <span>by Paul</span>
           </div>
 
@@ -54,7 +54,7 @@
       <div class="right">
         <div>
           <div>
-            <span>April 21, 2019</span> <span class="trattino"> - </span>
+            <span>April 21, 2019</span> <span class="dash"> - </span>
             <span>by Paul</span>
           </div>
 

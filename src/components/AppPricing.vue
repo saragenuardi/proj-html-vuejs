@@ -3,7 +3,7 @@
       <div class="our-pricing-section">
         <span>Price List</span>
         <h2>Our <span class="weight-normal">Pricing</span></h2>
-        <p class="services-description">
+        <p>
           When, while the lovely valley teems with vapour around meand the
           meridian sun strikes the upper surface.
         </p>
@@ -28,7 +28,7 @@
                 <li><span>Exceptional</span> Design</li>
               </ul>
 
-              <div class="w">
+              <div class="button-container">
                 <button class="pink-button">
                   <span>Order Now</span>
                   <i class="fas fa-long-arrow-alt-right"></i>
@@ -57,7 +57,7 @@
                 <li><span>Exceptional</span> Design</li>
               </ul>
 
-              <div class="w">
+              <div class="button-container">
                 <button class="white-button">
                   <span>Order Now</span>
                   <i class="fas fa-long-arrow-alt-right"></i>
@@ -86,7 +86,7 @@
                 <li><span>Exceptional</span> Design</li>
               </ul>
 
-              <div class="w">
+              <div class="button-container">
                 <button class="pink-button">
                   <span>Order Now</span>
                   <i class="fas fa-long-arrow-alt-right"></i>
