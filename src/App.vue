@@ -6,6 +6,8 @@
     <AppPortfolio />
     <AppPricing />
     <AppBlog />
+    <AppTestimonial />
+    <AppSubcribeBox />
   </div>
 </template>
 
@@ -16,7 +18,8 @@ import AppBusiness from "./components/AppBusiness.vue";
 import AppPortfolio from "./components/AppPortfolio.vue";
 import AppPricing from "./components/AppPricing.vue";
 import AppBlog from "./components/AppBlog.vue";
-
+import AppTestimonial from "./components/AppTestimonial.vue";
+import AppSubcribeBox from "./components/AppSubcribeBox.vue";
 export default {
   name: "App",
   components: {
@@ -26,6 +29,8 @@ export default {
     AppPortfolio,
     AppPricing,
     AppBlog,
+    AppTestimonial,
+    AppSubcribeBox,
   },
 };
 </script>
@@ -652,6 +657,99 @@ h2 {
   }
 }
 
+//Section TESTIMONIAL
+.testimonial-section{
+  text-align: center;
+  padding-top: 310px;
+  position: relative;
+
+  > span{
+    color: $secondary-color;
+    font-size: 13px;
+  }
+  h2{
+    margin: 5px 0 20px 0;
+    font-size: 38px;
+  }
+
+  > p{
+    color: $primary-color;
+    font-size: 13px;
+    width: 37%;
+    margin: 0 auto;
+    margin-bottom: 75px;
+  }
+
+  .quotes-container{
+    text-align: left;
+    @include flex-space-between();
+
+    &-box{
+      width: 30%;
+      position: relative;
+      text-align: center;
+
+      .quotation-mark{
+        position: absolute;
+        font-size: 170px;
+        top: 30px;
+        left: 38%;
+        opacity: 0.1;
+      }
+
+      img{
+        height: 60px;
+        border-radius: 100%;
+        border: 3px solid fuchsia;
+      }
+
+      .icons{
+        padding: 26px 0;
+        position: relative;
+        z-index: 2;
+        font-size: 12px;
+
+        .fas{
+          color: fuchsia;
+        }
+        .far{
+          color: fuchsia;
+        }
+      }
+
+      p{
+        font-size: 13px;
+        padding-bottom: 20px;
+      }
+
+      .credits{
+
+        span{
+          font-size: 13px;
+          font-weight: bold;
+        }
+
+        p{
+          margin-top: 7px;
+        }
+      }
+
+    }
+  }
+  .partners-img{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 140px;
+
+    img{
+      height: 52px;
+    }
+    img:nth-child(2){
+      height: 30px;
+      margin-top: 12px;
+    }
+  }
+
 .opacity {
   background-color: rgba(0, 0, 0, 0.5);
   position: absolute;
@@ -659,5 +757,6 @@ h2 {
   left: 0;
   width: 100%;
   height: 100%;
+}
 }
 </style>
