@@ -1,5 +1,6 @@
 <template>
-  <footer>
+  
+<footer>
     <div class="container">
       <div class="footer-content">
         <div class="footer-content-column-a">
@@ -46,16 +47,19 @@
       </div>
     </div>
   </footer>
+   
 </template>
 
 <script>
 export default {
   name: "AppFooter",
+  
+
 };
 </script>
 
  <style lang="scss">
-$primary-background-color:#0A1750 ;
+$primary-background-color: #0a1750;
 $footer-text-color: #aaa;
 $color-4: #aaa;
 $color-5: #69717b;
@@ -99,51 +103,50 @@ footer {
 li {
   padding-bottom: 13px;
 
-
-&-column-c {
-  padding-top: 15px;
-  li {
-    padding-bottom: 13px;
-  }
-}
-&-column-d {
-  padding-top: 15px;
-  width: 300px;
-  color: $color-5;
-
-  span {
-    color: #fff;
-  }
-
-  p {
-    margin-bottom: 5px;
-  }
-
-  p:first-child {
-    margin: 5px 0 20px 0;
-  }
-}
-
-hr {
-  margin-top: 40px;
-  border: none;
-  height: 0.5px;
-  background-color: $color-5;
-  margin-bottom: 20px;
-}
-.credits {
-  @include flex-space-between();
-
-  &-left {
-    color: $color-5;
-  }
-  &-right {
-    i {
-      padding-left: 30px;
-      font-size: 14px;
-      color: #fff;
+  &-column-c {
+    padding-top: 15px;
+    li {
+      padding-bottom: 13px;
     }
   }
-}
+  &-column-d {
+    padding-top: 15px;
+    width: 300px;
+    color: $color-5;
+
+    span {
+      color: #fff;
+    }
+
+    p {
+      margin-bottom: 5px;
+    }
+
+    p:first-child {
+      margin: 5px 0 20px 0;
+    }
+  }
+
+  hr {
+    margin-top: 40px;
+    border: none;
+    height: 0.5px;
+    background-color: $color-5;
+    margin-bottom: 20px;
+  }
+  .credits {
+    @include flex-space-between();
+
+    &-left {
+      color: $color-5;
+    }
+    &-right {
+      i {
+        padding-left: 30px;
+        font-size: 14px;
+        color: #fff;
+      }
+    }
+  }
 }
 </style>
