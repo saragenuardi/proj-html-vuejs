@@ -3,11 +3,18 @@
     <div class="container">
       <div class="navbar">
         <div class="navbar-left">
-          <img src="images/white-logo-2.png" alt="" />
+          <img class="logo" require:src="logo" alt="" />
         </div>
         <div class="navbar-right">
           <ul>
-            <li></li>
+         <li
+              v-for="(item, index) in navbarLinks"
+              :key="index"
+              :class="{ selected: item.active }"
+            >
+              {{ item.testo }}
+            </li>
+            <li> <button class="blue-button"> Sign In</button></li>
           </ul>
         </div>
       </div>
@@ -30,10 +37,46 @@
 
 <script>
 export default {
-  name: 'AppHeader'
+  name: 'AppHeader',
+ data() {
+    return {
+      navbarLinks: [
+        {
+          testo: "Home",
+          link: "#",
+          active: true,
+        },
+        {
+          testo: "About",
+          link: "#",
+          active: false,
+        },
+        {
+          testo: "Services",
+          link: "#",
+          active: false,
+        },
+        {
+          testo: "Blog",
+          link: "#",
+          active: false,
+        },
+        {
+          testo: "Contact",
+          link: "#",
+          active: false,
+        },
+        {
+          testo: "Portfolio",
+          link: "#",
+          active: false,
+        },
+      ],
+    };
+  },
+
 };
 </script>
 
 <style lang="scss" scooped>
-
 </style>
