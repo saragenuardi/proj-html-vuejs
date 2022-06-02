@@ -27,7 +27,7 @@
           </div>
 
         </div>
-        <button class="pink-button">View All Services</button>
+        <button class="pink-2-button">View All Services</button>
   </div>
 </template>
 

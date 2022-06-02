@@ -4,6 +4,8 @@
     <AppServices />
     <AppBusiness />
     <AppPortfolio />
+    <AppPricing />
+    <AppBlog />
   </div>
 </template>
 
@@ -12,6 +14,8 @@ import AppHeader from "./components/AppHeader.vue";
 import AppServices from "./components/AppServices.vue";
 import AppBusiness from "./components/AppBusiness.vue";
 import AppPortfolio from "./components/AppPortfolio.vue";
+import AppPricing from "./components/AppPricing.vue";
+import AppBlog from "./components/AppBlog.vue";
 
 export default {
   name: "App",
@@ -20,6 +24,8 @@ export default {
     AppServices,
     AppBusiness,
     AppPortfolio,
+    AppPricing,
+    AppBlog,
   },
 };
 </script>
@@ -32,8 +38,8 @@ $blue-background: #0a1750;
 $services-p: #808080;
 $span: #f9696b;
 //utilizzo gradient per la sfumatura dei bottoni
-$gradient-pink-button: linear-gradient(to right, #b7256e 0%, #f8626b 100%);
-$gradient-blue-button: linear-gradient(to right, #03a6d2 0%, #1f3e83 100%);
+$gradient-pink: linear-gradient(to right, #b7256e 0%, #f8626b 100%);
+$gradient-blue: linear-gradient(to right, #03a6d2 0%, #1f3e83 100%);
 $blue-p: #047caa;
 
 //Fonts
@@ -43,10 +49,8 @@ $font-title: "Heebo", sans-serif;
 //Bottons and mixin
 @mixin buttons-style {
   border-radius: 25px;
-  width: 140px;
   height: 40px;
   border: none;
-  color: #fff;
 }
 @mixin flex-space-between {
   display: flex;
@@ -55,6 +59,14 @@ $font-title: "Heebo", sans-serif;
 @mixin flex-space-evenly {
   display: flex;
   justify-content: space-evenly;
+}
+@mixin our-pricing-box {
+  width: 32%;
+  height: 100%;
+  position: relative;
+  margin-top: 50px;
+  border-radius: 20px;
+  padding: 30px 0;
 }
 
 //RESET
@@ -98,14 +110,38 @@ ul {
 }
 
 .pink-button {
-  background: $gradient-pink-button;
+  background: $gradient-pink;
+  color: #fff;
   @include buttons-style();
+  width: 170px;
+  @include flex-space-between();
+  align-items: center;
+  padding: 0 23px;
+}
+
+.white-button {
+  background: #fff;
+  color: $span;
+  @include buttons-style();
+  width: 170px;
+  @include flex-space-between();
+  align-items: center;
+  padding: 0 23px;
+}
+
+.pink-2-button {
+  background: $gradient-pink;
+  color: #fff;
+  @include buttons-style();
+  width: 150px;
 }
 
 .blue-button {
-  background: $gradient-blue-button;
+  background: $gradient-blue;
   @include buttons-style();
-  margin-left: 20px;
+  margin-left: 16px;
+  width: 150px;
+  color: #fff;
 }
 
 //Header
@@ -222,20 +258,318 @@ header {
 
 //Section PORTFOLIO
 
-.portfolio-section{
+.portfolio-section {
+  background-color: #f1f1f1;
+  &-content {
+    @include flex-space-between();
+    align-items: flex-end;
+    padding: 20px 0 55px 0;
 
-  &-content{
-    margin-bottom: 30px;
-    > span{
-      color: $span;
+    &-left {
+      > span {
+        color: $span;
+        font-size: 13px;
+      }
+
+      h2 {
+        font-size: 32px;
+      }
+    }
+    &-right {
+      i {
+        color: $span;
+        font-size: 32px;
+        padding-bottom: 10px;
+        margin-left: 10px;
+      }
     }
   }
-  &-content-img{
-    @include flex-space-between();
 
-    img{
-      width: 350px;
+  &-content-img {
+    @include flex-space-between();
+  }
+
+  &-container {
+    width: 375px;
+    height: 300px;
+    background-color: #fff;
+    border-radius: 20px;
+
+    img {
+      width: 375px;
+      height: 240px;
+      border-radius: 20px;
+    }
+
+    &-text {
+      @include flex-space-between();
+      height: calc(400px - 328px);
+      padding: 18px 40px;
+
+      span {
+        color: $services-p;
+        font-size: 10px;
+      }
+
+      h3 {
+        font-size: 14px;
+      }
+    }
+  }
+
+  &-container:hover {
+    background: $gradient-pink;
+  }
+}
+.icons-container {
+  display: flex;
+  justify-content: center;
+  padding: 43px 0 40px 0;
+
+  .fas:first-child {
+    color: $span;
+    font-size: 6px;
+  }
+  .fas {
+    color: $services-p;
+    font-size: 6px;
+    margin-left: 5px;
+  }
+}
+
+
+//Section PRICING
+
+/* Prova */
+.our-pricing-section {
+  width: 100%;
+  height: 500px;
+  text-align: center;
+  background-color: $blue-background;
+  padding-top: 50px;
+  position: relative;
+
+  > span {
+    color: $span;
+    font-size: 12px;
+  }
+
+  > h2 {
+    margin: 12px 0 8px 0;
+    color: #fff;
+    font-size: 38px;
+  }
+
+  p {
+    color: #fff;
+    font-size: 13px;
+    width: 37%;
+    margin: 0 auto 12px auto;
+  }
+
+  .container {
+    @include flex-space-between();
+    position: absolute;
+    left: 90px;
+  }
+
+  &-box-white {
+    @include our-pricing-box();
+    background-color: white;
+
+    &-top {
+      h3 {
+        font-size: 28px;
+      }
+
+      span {
+        text-transform: uppercase;
+        font-size: 12px;
+      }
+    }
+
+    &-middle {
+      margin-top: 31px;
+      padding-bottom: 50px;
+
+      .dollar {
+        margin-right: 90px;
+      }
+
+      h2 {
+        font-size: 60px;
+      }
+      span {
+        font-size: 12px;
+      }
+      .transparent-number {
+        font-size: 260px;
+        position: absolute;
+        right: -15px;
+        top: -105px;
+        color: black;
+        opacity: 0.1;
+      }
+    }
+
+    &-bottom {
+      li {
+        padding-bottom: 6px;
+        font-size: 13px;
+      }
+      span {
+        font-weight: bold;
+      }
+      .w {
+        display: flex;
+        justify-content: center;
+        button {
+          margin: 30px 0 16px 0;
+
+          i {
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+  &-box-pink {
+    @include our-pricing-box();
+    background: linear-gradient(to bottom, #bf2d6d 0%, #ea566d 100%);
+    color: #fff;
+
+    &-top {
+      h3 {
+        font-size: 28px;
+      }
+
+      span {
+        text-transform: uppercase;
+        font-size: 12px;
+      }
+    }
+
+    &-middle {
+      margin-top: 31px;
+      padding-bottom: 50px;
+
+      .dollar {
+        margin-right: 90px;
+      }
+
+      h2 {
+        font-size: 60px;
+      }
+      span {
+        font-size: 12px;
+      }
+      .transparent-number {
+        font-size: 260px;
+        position: absolute;
+        right: -15px;
+        top: -105px;
+        color: black;
+        opacity: 0.1;
+      }
+    }
+
+    &-bottom {
+      li {
+        padding-bottom: 6px;
+        font-size: 13px;
+      }
+      span {
+        font-weight: bold;
+      }
+
+      .w {
+        display: flex;
+        justify-content: center;
+        button {
+          margin: 30px 0 16px 0;
+
+          i {
+            font-size: 16px;
+          }
+        }
+      }
     }
   }
 }
+//Section Blog
+.weila-section {
+  background-color: #f1f1f1;
+  height: 700px;
+  padding-top: 400px;
+  text-align: center;
+}
+ > span{
+    color: $span;
+  }
+  h2{
+    margin: 5px 0;
+    font-size: 38px;
+  }
+
+  > p{
+    color: $services-p;
+    font-size: 13px;
+    width: 37%;
+    margin: 0 auto;
+    margin-bottom: 75px;
+  }
+
+  .container-section{
+    @include flex-space-between();
+    text-align: left;
+    padding: 0 80px;
+    .top{
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 0 0 30px 40px;
+      background-image: url("./assets/images/headway-537308-unsplash-1380x703.jpg");
+      position: relative;
+      background-size: cover;
+      width: 49%;
+      height: 330px;
+      color: #fff;
+
+      span{
+        position: relative;
+        font-size: 12px;
+      }
+      .trattino{
+        margin: 0 7px;
+      }
+      h3{
+        position: relative;
+        margin: 10px 0;
+        font-size: 16.5px;
+      }
+      p{
+        position: relative;
+        font-size: 12px;
+        width: 57%;
+      }
+    }
+    .middle{
+      width: 23%;
+      height: 330px;
+      background: linear-gradient(to bottom right, #020230 0%,#173270 100%);
+    }
+    .bottom{
+      width: 23%;
+      height: 330px;
+      background: linear-gradient(to bottom right, #020230 0%,#173270 100%);;
+    }
+  }
+  .opacity{
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+} 
 </style>

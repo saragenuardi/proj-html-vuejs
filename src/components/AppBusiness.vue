@@ -13,7 +13,7 @@
           of my trees, and but a few stray gleams steal into the inner
           sanctuary.
         </p>
-        <button class="pink-button">Try It Now</button>
+        <button class="pink-2-button">Try It Now</button>
         <button class="blue-button">Explore More</button>
       </div>
     </div>
